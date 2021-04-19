@@ -1,0 +1,140 @@
+/* GENERAL */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Original Surfer', cursive;
+}
+body{
+    font-size: 20px;
+    color: #001632;
+}
+h1{
+    font-size: 48px;
+}
+
+/* WRAP */
+.wrap{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* SITE HEADER */
+.site-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    color: #fff;
+    background-color: #001632;
+}
+.site-header img{
+    margin-right: 10px;
+}
+.site-header h1 span{
+    color: #03e166;
+}
+
+/* SEARCH */
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    font-weight: bold;
+    background-color: #03e166;
+}
+.search .select-wrap{
+    position: relative;
+    margin: 0 20px;
+}
+.search .select-wrap::after{
+    content:'\f13a';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+/* Select Input */
+.search .select-wrap select{
+    appearance: none;
+    padding: 5px 10px;
+    width: 130px;
+    font-size: 18px;
+    text-transform: capitalize;
+    color: #001632;
+    background-color: rgba(255, 255, 255, .7);
+    border: 0;
+    border-radius: 20px;
+    outline: none;
+}
+.search .select-wrap select:focus{
+    background-color: #fff;
+}
+.search .select-wrap select:focus + .search .select-wrap::after{
+   display: none; 
+}
+.search .select-wrap select option{
+    text-transform: capitalize;
+}
+/* Switch Color Button */
+.search .btn{
+    width: 120px;
+    margin-left: 20px;
+    padding: 10px;
+    color: #eee;
+    background-color: #f71668;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.search .btn:hover,
+.search .btn:focus{
+    background-color: #971344;
+}
+
+/* ICONS */
+.icons{
+    flex-grow: 1;
+    display: flex;
+    padding: 20px;
+    background-color: #006cfa;
+
+}
+.icons .icons-box{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    width: 1000px;
+    height: calc(100vh - 200px);
+    margin: 0px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, .4);
+    border-radius: 10px;
+    overflow-y: auto;
+}
+.icons-box .icon{
+    flex-basis: calc(100% / 5 - 20px);
+    margin: 20px 10px;
+    padding: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    background-color: #eee;
+    border-radius: 5px;
+}
+.icons-box .icon i{
+    margin-bottom: 10px;
+    font-size: 36px;
+    cursor: pointer;
+}
+
+.icons-code{
+    align-self: center;
+    text-align: center;
+    font-size: 24px;
+    color: #eee;
+}

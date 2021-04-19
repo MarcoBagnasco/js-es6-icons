@@ -9,7 +9,7 @@
 
 // 1.
 // Icons container reference
-const container = document.querySelector('.icons');
+const container = document.querySelector('.icons-box');
 // container.innerHTML = 'ciao'; //test
 
 // Print in HTML
@@ -18,7 +18,7 @@ const container = document.querySelector('.icons');
 
 // 2.
 // Color's Array
-const colors = ['red', 'green', 'blue'];
+const colors = ['#03e166', '#f71668', '#006cfa'];
 
 // Create new icons array with color property
 const coloredIcons = colorIcons(icons, colors);
@@ -38,8 +38,30 @@ const type = getType(icons);
 genOption(type, select);
 
 // Filter by selection
-selection(select,coloredIcons,container);
+selection(select, icons, coloredIcons, container)
 
+// Switch Color
+const switchBtn = document.querySelector('.search .btn');
+
+// Click Switch Color Button
+switchBtn.addEventListener('click', () => {
+
+    if(switchBtn.innerHTML === 'Remove Colors'){
+        // Print without Colors
+        printIcons(icons, container);
+        // Set select on All
+        select.value = 'all';
+        // Change Button text
+        switchBtn.innerHTML = 'Add Colors';
+    } else {
+        // Print with Colors
+        printIcons(coloredIcons, container);
+        // Set select on All
+        select.value = 'all';
+        // Change Button text
+        switchBtn.innerHTML = 'Remove Colors';
+    }
+});
 
 /*****************
  * FUNCTIONS
@@ -62,7 +84,7 @@ function printIcons(icons, container) {
             <i class="${family} ${prefix}${name}" style="color: ${color}"></i>
             <div class="name">${name}</div>
         </div>
-        `
+        `;
     });
     // Print in HTML
     container.innerHTML = output;
@@ -125,15 +147,24 @@ function genOption(types, select){
  * Print in HTML objetcs from array based on a selection
  * @param {DOM} select - DOM node of a select tag
  * @param {array} icons - array of objects
+ * @param {array} coloredIcons - array of objects with color property
  * @param {DOM} container - DOM node
  */
-function selection(select, icons, container){
+function selection(select, icons, coloredIcons, container){
     select.addEventListener('change', () => {
         // Selected Option
         const option = select.value;
-    
+        
+        let filteredIcons = [];
+        
         // Create new array filtered by type
-        const filteredIcons = filterIcons(icons, option);
+        if(switchBtn.innerHTML === 'Remove Colors'){
+            // Array with Colors
+            filteredIcons = filterIcons(coloredIcons, option);
+        } else {
+            // Array without Colors
+            filteredIcons = filterIcons(icons, option);
+        }
     
         // Print in HTML
         printIcons(filteredIcons, container);
@@ -157,3 +188,4 @@ function filterIcons(icons, option){
 
     return filteredIcons;
 }
+

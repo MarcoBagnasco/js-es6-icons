@@ -6,30 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ES6 Icons</title>
 
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" rel="stylesheet">
+
     <!-- ICONS -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css' integrity='sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==' crossorigin='anonymous'/>
+
+    <!-- STYLE -->
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <!-- SITE HEADER -->
-    <header class="site-header">
-        <h1>Icons</h1>
-    </header>
+    <div class="wrap">
+        <!-- SITE HEADER -->
+        <header class="site-header">
+            <img src="./img/logo-white.png" alt="logo">
+            <h1>boolean<span>Icons</span></h1>
+        </header>
 
-    <!-- SITE MAIN -->
-    <main class="site-main">
         <!-- SEARCH -->
         <section class="search">
             <label for="type">Filter by Type</label>
-            <select name="type" id="type">
-                <option value="all">All</option>
-            </select>
+            <div class="select-wrap">
+                <select name="type" id="type">
+                    <option value="all">All</option>
+                </select>
+            </div>
+            <!-- Switch Color Button -->
+            <button class="btn">Remove Colors</button>
         </section>
 
         <!-- ICONS -->
         <section class="icons">
-
+            <div class="icons-box"></div>
         </section>
-    </main>
+    </div>
+
     <!-- JAVASCRIPT -->
     <!-- Icons Array -->
     <script src="./js/data.js"></script>
