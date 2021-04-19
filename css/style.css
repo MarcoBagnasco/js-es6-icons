@@ -138,3 +138,15 @@ h1{
     font-size: 24px;
     color: #eee;
 }
+/* Icon's HTML code */
+.icons-code .selected-icons{
+    margin-top: 10px;
+    width: 595px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 20px;
+    color: #001632;
+    background-color: #fff;
+}

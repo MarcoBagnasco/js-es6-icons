@@ -189,3 +189,14 @@ function filterIcons(icons, option){
     return filteredIcons;
 }
 
+/*******************************
+ *  EXPERIMENT
+ *******************************/
+// Print Icon's HTML Code
+const copy = document.querySelector('.icons .selected-icons');
+
+document.querySelectorAll('.icon i').forEach(element => {
+    element.addEventListener('click', function() {
+        copy.textContent = `${this.outerHTML}`;
+    });
+});
