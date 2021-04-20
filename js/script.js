@@ -195,8 +195,20 @@ function filterIcons(icons, option){
 // Print Icon's HTML Code
 const copy = document.querySelector('.icons .selected-icons');
 
-document.querySelectorAll('.icon i').forEach(element => {
-    element.addEventListener('click', function() {
-        copy.textContent = `${this.outerHTML}`;
-    });
+// document.querySelectorAll('.icon i').forEach(element => {
+//     element.addEventListener('click', function() {
+//         copy.textContent = `${this.outerHTML}`;
+//     });
+// });
+
+let rootElement = document.querySelector('.icons-box');
+
+// Icons inserted at any time 
+rootElement.addEventListener('click',function(event){
+    // Trigger element
+    let targetElement = event.target;
+    // If innerHTML is empty (that's mean is an i tag)
+    if(!targetElement.innerHTML){
+        copy.textContent = `${targetElement.outerHTML}`;
+    }
 });
