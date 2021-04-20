@@ -48,8 +48,10 @@ h1{
 .search .select-wrap{
     position: relative;
     margin: 0 20px;
+    background-color: rgba(255, 255, 255, .7);
+    border-radius: 20px;
 }
-.search .select-wrap::after{
+.search .select-wrap::before{
     content:'\f13a';
     position: absolute;
     top: 50%;
@@ -61,22 +63,22 @@ h1{
 }
 /* Select Input */
 .search .select-wrap select{
+    position: relative;
     appearance: none;
-    padding: 5px 10px;
+    padding: 5px 30px 5px 10px;
     width: 130px;
+    height: 38px;
     font-size: 18px;
     text-transform: capitalize;
+    text-overflow: ellipsis;
     color: #001632;
-    background-color: rgba(255, 255, 255, .7);
-    border: 0;
+    background: transparent;
+    border: 2px solid transparent;
     border-radius: 20px;
     outline: none;
 }
 .search .select-wrap select:focus{
-    background-color: #fff;
-}
-.search .select-wrap select:focus + .search .select-wrap::after{
-   display: none; 
+    border: 2px solid #001632;
 }
 .search .select-wrap select option{
     text-transform: capitalize;
@@ -102,7 +104,6 @@ h1{
     display: flex;
     padding: 20px;
     background-color: #006cfa;
-
 }
 .icons .icons-box{
     display: flex;
